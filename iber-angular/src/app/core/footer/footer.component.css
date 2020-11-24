@@ -1,0 +1,16 @@
+:host { 
+    display: flex;
+    color: bisque;
+    background-color: brown;
+
+}
+
+footer {
+    width: 100%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}

@@ -1,0 +1,6 @@
+<h2>Saludo con referencias locales</h2>
+<input type="text" placeholder="Dime tu nombre" #usuario>
+<button (click)=" usuario.value = '' " id="borrar">Borrar</button>
+<button (click)=" usuario.value = usuario.value " id="borrar">Salvar</button>
+<p>Hola {{ usuario.value }}</p>
+ 

@@ -1,0 +1,14 @@
+:host { 
+    display: flex;
+    flex-direction: column;
+    color: bisque;
+    background-color: brown;
+}
+
+header {
+    margin: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
