@@ -1,0 +1,16 @@
+<h2>Lista de usuarios</h2>
+
+<ibe-nuevo (add)="add($event)"></ibe-nuevo>
+
+<div *ngIf="aUsuarios.length">
+    <h3>Usuarios</h3>
+    <ul>
+        <li *ngFor="let item of aUsuarios">
+            <ibe-usuario [usuario]="item" (delete)="delete($event)"></ibe-usuario>
+        </li>
+    </ul>
+</div>
+
+
+
+

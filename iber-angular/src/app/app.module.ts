@@ -18,8 +18,7 @@ import { AboutModule } from './about/about.module';
     FormsModule,
     AppRoutingModule,
     CoreModule,
-    HomeModule,
-    AboutModule
+    HomeModule
   ],
   providers: [],
   exports: [],
