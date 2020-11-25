@@ -1,0 +1,20 @@
+<h2>Lista Simple de Tareas</h2>
+<input type="text" placeholder="Añade tareas" [(ngModel)]='tarea.nombre'>
+<button (click)="onAdd()" id="borrar">Añadir</button>
+
+<div *ngIf="aTareas.length; else sin_tareas">
+    <h3 [style.fontSize.rem]="1 + aTareas.length/10">Tareas</h3>
+    <ul>
+        <li *ngFor="let item of aTareas; let i = index">
+            <input type="checkbox" [(ngModel)]="item.isCompleted" 
+                (change)="onCheckChange()">
+                <span [ngClass]="{completa: item.isCompleted}">{{item.nombre}}</span>
+                <span class="boton" (click)="onBorrar(i)">🗑</span>
+        </li>
+    </ul>
+</div>
+
+<ng-template #sin_tareas >
+    <P>Anímate a empezar la lista de tareas</P>
+</ng-template>
+

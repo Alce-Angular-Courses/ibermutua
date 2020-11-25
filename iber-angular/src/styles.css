@@ -12,3 +12,7 @@ main {
     margin: 1rem 2rem;
     min-height: 75vh;
 }
+
+p {
+    color: blue
+}

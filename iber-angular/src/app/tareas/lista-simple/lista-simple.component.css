@@ -1,0 +1,12 @@
+ul {
+    list-style: none;
+}
+
+.boton  {
+    cursor: pointer;
+}
+
+.completa {
+    text-decoration: underline;
+    font-style: italic;
+}

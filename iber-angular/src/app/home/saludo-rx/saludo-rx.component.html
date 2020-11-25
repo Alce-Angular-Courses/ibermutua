@@ -1,0 +1,4 @@
+<h2>Saludo Rx</h2>
+<input type="text" placeholder="Dime tu nombre" [formControl]="fcUsuario">
+<button (click)="onBorrar($event)" id="borrar">Borrar</button>
+<p>Hola {{ fcUsuario.value }}</p>
