@@ -1,8 +1,11 @@
 <footer>
     <address>
-        {{autor}}
+        {{autor | lowercase }}
     </address>
     <p>
-        {{hoy.toLocaleDateString()}}
+       <!--  Ajuste del idioma solo para este caso
+           {{hoy | date : 'fullDate' : null : 'es'}} 
+        -->
+        {{hoy | date : 'fullDate' | titlecase }} 
     </p>
 </footer>
