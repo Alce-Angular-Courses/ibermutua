@@ -7,10 +7,15 @@ import { Usuario } from 'src/app/models/usuario';
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
-  @Input() usuario: Usuario;
+  @Input() usuario!: Usuario;
+
+  /* @Input() set usuario (usuario : Usuario) {
+    this._usuario  = {...usuario };
+  } */
+
+
   @Output() delete: EventEmitter<number>;
   constructor() {
-    this.usuario = new Usuario();
     this.delete = new EventEmitter();
   }
 
