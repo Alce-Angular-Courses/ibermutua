@@ -22,7 +22,9 @@ registerLocaleData(localeES);
     CoreModule,
     HomeModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'es'}],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'es'}
+  ],
   exports: [],
   bootstrap: [AppComponent]
 })

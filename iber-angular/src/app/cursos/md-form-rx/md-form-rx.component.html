@@ -1,0 +1,96 @@
+<p>Model Driven Form (Rx)</p>
+<form class="col-6" name="form-td" id ="form-td" [formGroup]="fgAlumno"
+ (submit)="enviar()">
+    <fieldset>
+        <legend>Datos de usuario</legend>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="nombre"
+            formControlName="nombre">
+        </div>
+        <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" name="apellidos" id="apellidos"
+            formControlName="apellidos">
+        </div>
+        <div class="form-group">
+            <label for="dni">DNI</label>
+            <input type="text" class="form-control" name="dni" id="dni"
+            formControlName="dni">
+            </div>  
+        <div class="form-group">
+            <label for="email">Correo</label>
+            <input type="email" class="form-control" name="email" id="email"
+            formControlName="email">
+        </div>
+        <div class="form-group">
+            <label for="nacim">Fecha de nacimiento</label>
+            <input type="date" class="form-control" name="nacim" id="nacim"
+            formControlName="nacim">
+        </div>
+        <div class="form-group">
+          <label for="coment">Comentarios</label>
+          <textarea class="form-control" name="coment" id="coment" rows="3"
+          formControlName="coment"></textarea>
+        </div>                            
+    </fieldset>    
+    <fieldset>
+        <legend>Datos del curso</legend>
+        <div class="form-check">
+            <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="isOk" id="isOk"
+            formControlName="isOk">
+            Estoy de acuerdo con ....
+            </label>
+        </div>  
+        <div>
+            <legend>Turno</legend>
+            <div class="form-check" *ngFor="let item of turnos">
+                <label class="form-check-label" [title]="item.info">
+                    <input type="radio" class="form-check-input" name="turno" [id]="'turno'+item.id"
+                    [value]="item" formControlName="turno">
+                    {{item.nombre}}
+                </label>
+            </div>            
+            <!-- <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="turno" id=""
+                    value="mañana" required>
+                    Mañana
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="turno" id="" 
+                    value="tarde">
+                    Tarde
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="turno" id="" 
+                    value="noche">
+                    Noche
+                </label>
+            </div> -->            
+        </div>  
+        <div class="form-group" >
+        <label for="curso">Selecciona el tema</label>
+            <select class="form-control" name="curso" id="curso" 
+                formControlName="curso">
+                <option value=""></option>
+                <option *ngFor="let item of cursos" [ngValue]="item" [title]="item.info">
+                    {{item.nombre}}
+                </option>
+                
+                <!-- <option value="angular">Angular</option>
+                <option value="react">React</option>
+                <option value="vue">Vue</option> -->
+            </select>
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">
+        Enviar</button>
+</form>
+
+{{ fgAlumno.value |json }}

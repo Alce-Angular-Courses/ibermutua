@@ -5,6 +5,7 @@ import { TareasRoutingModule } from './tareas-routing.module';
 import { TareasComponent } from './tareas.component';
 import { ListaSimpleComponent } from './lista-simple/lista-simple.component';
 import { FormsModule } from '@angular/forms';
+import { StorageService } from '../services/storage.service';
 
 
 @NgModule({
@@ -13,6 +14,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     TareasRoutingModule
+  ],
+  providers: [
+    StorageService
   ]
 })
 export class TareasModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tarea } from 'src/app/models/tarea';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'ibe-lista-simple',
@@ -11,11 +12,13 @@ export class ListaSimpleComponent implements OnInit {
   aTareas: Array<Tarea>;
   store: string;
 
-  constructor() {
+  constructor(public st: StorageService) {
     this.store = 'tareas';
     this.tarea = new Tarea();
-    this.aTareas = localStorage.getItem(this.store) ?
-      JSON.parse(localStorage.getItem(this.store) as string) : [];
+    /* this.aTareas = localStorage.getItem(this.store) ?
+      JSON.parse(localStorage.getItem(this.store) as string) : []; */
+    this.aTareas = st.getTareas();
+
   }
 
   ngOnInit(): void {
@@ -40,6 +43,7 @@ export class ListaSimpleComponent implements OnInit {
   }
 
   private save(): void {
-    localStorage.setItem(this.store, JSON.stringify(this.aTareas));
+    /* localStorage.setItem(this.store, JSON.stringify(this.aTareas)); */
+    this.st.setTareas(this.aTareas);
   }
 }
