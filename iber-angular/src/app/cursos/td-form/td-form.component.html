@@ -4,7 +4,7 @@
         <legend>Datos de usuario</legend>
         <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" name="nombre" id="nombre" #refNombre ="ngModel"
+            <input type="text" class="form-control" id="nombre" name="nombre" #refNombre ="ngModel"
             [(ngModel)]="alumno.nombre" required minlength="2">
         </div>
         <div class="error" [hidden]="refNombre.valid || refNombre.untouched">

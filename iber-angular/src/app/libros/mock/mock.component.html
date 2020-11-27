@@ -1,0 +1,13 @@
+<h3>Mock de busqueda de libros</h3>
+<input type="text" placeholder="Clave busqueda" [(ngModel)]="clave">
+<button (click)="onBuscar()">Buscar</button>
+<button (click)="onBuscarAsync()">Buscar Async</button>
+<button (click)="onBuscarRx()">Buscar Rx</button>
+<div *ngIf="aLibros.length">
+    <h4>Resulto de la búsqueda</h4>
+    <ul>
+        <li *ngFor="let item of aLibros">
+            {{item.autores}} - {{item.titulo}}
+        </li>
+    </ul>
+</div>
