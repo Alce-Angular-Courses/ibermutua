@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  urlLibros: 'https://www.googleapis.com/books/v1/volumes?q=intitle:'
+  urlLibros: 'https://www.googleapis.com/books/v1/volumes?q=intitle:',
+  urlUsers: 'http://localhost:3000/users/'
 };
 
 /*

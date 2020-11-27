@@ -6,10 +6,11 @@ import { LibrosComponent } from './libros.component';
 import { MockComponent } from './mock/mock.component';
 import { FormsModule } from '@angular/forms';
 import { GoogleComponent } from './google/google.component';
+import { ByServiceComponent } from './by-service/by-service.component';
 
 
 @NgModule({
-  declarations: [LibrosComponent, MockComponent, GoogleComponent],
+  declarations: [LibrosComponent, MockComponent, GoogleComponent, ByServiceComponent],
   imports: [
     CommonModule,
     FormsModule,
